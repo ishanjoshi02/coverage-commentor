@@ -1,0 +1,26 @@
+name: "Python Coverage Commentor"
+author: "Ishan Joshi"
+description: >
+    GitHub Action that report Python Unit Test Coverage using coverage. 
+    The Action will also run the test suite to determine the test coverage.
+    Currently supports unittest, pytest and nosetest Testing Frameworks.
+
+inputs:
+
+    requirements:
+        description: >
+            Pip command to install the correct testing framework.
+            By default, it will install latest version of pytest, unittest and nosetest. 
+            It is highly recommended that you pass this.
+        required: false
+        default: "nosetest unittest pytest"
+
+    testRunCommand:
+        description: "The command currently being used to run the Test Suite"
+        required: true
+
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+        - ${{ inputs.testRunCommand }}
