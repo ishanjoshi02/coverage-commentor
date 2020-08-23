@@ -23,4 +23,5 @@ runs:
     using: 'docker'
     image: 'Dockerfile'
     args:
+        - ${{ inputs.requirements }}
         - ${{ inputs.testRunCommand }}
