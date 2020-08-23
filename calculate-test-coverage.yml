@@ -25,3 +25,6 @@ runs:
     args:
         - ${{ inputs.requirements }}
         - ${{ inputs.testRunCommand }}
+    branding:
+        icon: 'message-circle'
+        color: 'blue'

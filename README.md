@@ -19,3 +19,19 @@ It is highly recommended that you pass a specific framework along with the corre
 **Required** The command that you need to execute to start the test suite.
 
 E.g. `pytest arg1 arg2`, `unittest tests.myTests -v`
+
+## Example Usage
+
+```yml
+
+on: pull_request
+
+jobs:
+    coverage_commentor_job:
+        runs-on: ubuntu-latest. # Docker based GitHub Actions only run on Linux OSs.
+        name: Coverage Commentor
+        uses: actions/coverage-commentor@v1 # Replace with correct version.
+        with:
+            requirements: "pytest"
+            testRunCommand: "pytest"
+```
